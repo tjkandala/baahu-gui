@@ -1,0 +1,52 @@
+{
+  "name": "baahu-gui",
+  "version": "1.4.0",
+  "description": "GUI for scaffolding, developing, and building Baahu applications",
+  "license": "MIT",
+  "scripts": {
+    "format": "bash -c \"refmt --in-place *.re\"",
+    "run": "esy x App"
+  },
+  "esy": {
+    "build": "refmterr dune build -p App",
+    "buildsInSource": "_build",
+    "install": [
+      "esy-installer App.install"
+    ]
+  },
+  "revery-packager": {
+    "bundleName": "ExampleApp",
+    "bundleId": "com.example.app",
+    "displayName": "Revery Example App",
+    "mainExecutable": "App",
+    "windows": {
+      "packages": [
+        "zip"
+      ],
+      "iconFile": "assets/icon.ico"
+    },
+    "darwin": {
+      "packages": [
+        "tar",
+        "dmg"
+      ],
+      "iconFile": "assets/icon.icns"
+    },
+    "linux": {
+      "packages": [
+        "tar",
+        "appimage"
+      ]
+    }
+  },
+  "dependencies": {
+    "revery": "revery-ui/revery#2fdee68",
+    "@opam/dune": "*",
+    "@glennsl/timber": "^1.2.0",
+    "esy-macdylibbundler": "*"
+  },
+  "devDependencies": {
+    "ocaml": "~4.9.0",
+    "@opam/ocaml-lsp-server": "ocaml/ocaml-lsp:ocaml-lsp-server.opam#04733ed"
+  }
+}
