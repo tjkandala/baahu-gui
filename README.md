@@ -20,8 +20,6 @@ A major goal is to reduce the barrier of entry to create **quality** web applica
 
 ## When will Baahu GUI be ready to use?
 
-My goal is to complete Baahu GUI by late July 2020.
-
 There are two tasks blocking the 1.0.0 release of Baahu (the framework):
 
 1. Completion of Baahu GUI for ease of use
